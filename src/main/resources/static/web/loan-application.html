@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/fabicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Loan-application</title>
+</head>
+<body>
+    <div id="app" v-cloak>
+        {{selectLoan}}
+        {{paymentSummary}}
+        {{filterAccountActive}}
+        <header>
+          <div class="justify-content-center d-flex align-items-center p-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="46" height="36" fill="currentColor" class="bi bi-bank " style="color: white;" viewBox="0 0 16 16">
+              <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+            </svg>
+              <h1 class="m-0"> Buenos Aires Bank</h1>
+          </div>
+            <nav class="main-menu">
+                <ol>
+                    <a href="./products.html" ><li>My products</li></a> 
+                    <a href="./accounts.html"><li>Accounts</li></a> 
+                    <a href="./cards.html" ><li>Cards</li></a> 
+                    <a href="./loan-application.html" id="active"><li>Loans</li></a> 
+                </ol>
+            </nav>
+
+                                    <!-- Nav-mobile -->
+              <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                  <span></span>
+                </label>
+            
+                <ul class="menu__box">
+                  <li><a class="menu__item" href="./products.html" >My products</a></li>
+                  <li><a class="menu__item" href="./accounts.html">Accounts</a></li>
+                  <li><a class="menu__item" href="./cards.html" >Cards</a></li>
+                  <li><a class="menu__item" href="./loan-application.html" id="active">Loans</a></li>
+                </ul>
+              </div>
+        </header>
+        <main>
+
+            <div class="img-header" >
+                <div class="img-header-public" data-aos="fade-left"
+                data-aos-anchor="#example-anchor"
+                data-aos-offset="500"
+                data-aos-duration="500">
+                    <h3>Request a loan and get it instantly in your account</h3> 
+                </div>
+            </div>
+          
+            <div class="container-acounts-main ">
+
+                <div class="col-2 container-accordion">
+
+                    <div class="accordion " id="accordionExample">
+      
+                      <div class="accordion-item ">
+                        
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                                </svg>
+                              {{client.firstName}} {{client.lastName}}
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                              <a href="./maintenance.html">personal information</a>
+                          </div>
+                          
+                        </div>
+                       <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                              <a href="./maintenance.html">CBU and aliases</a>
+                          </div>
+                          
+                       </div>
+                       
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                              <a href="./maintenance.html">transfers</a>
+                          </div>
+                          
+                        </div>
+                      </div>
+      
+      
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                                  <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
+                                </svg>
+                              Investments
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <a href="./maintenance.html">Fixed deadlines</a>
+                          </div>
+                        </div>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <a href="./maintenance.html">Financial income tax</a>
+                          </div>
+                        </div>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <a href="./maintenance.html">Stocks and Bonds</a>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cash" viewBox="0 0 16 16">
+                                  <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                  <path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z"/>
+                                </svg>
+                              International Operations 
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                              <a href="./maintenance.html">international collections</a> 
+                          </div>
+                        </div>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                             <a href="./maintenance.html">International Payments</a> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="exit-sesion my-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-right colorWhite" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                      </svg>
+                      <a @click.prevent="logOut" id="logOut">log out</a>
+                    </div>
+                    
+                </div>
+
+                <div class="col-8 container-acounts d-flex justify-content-end flex-column align-items-center">
+                    <div class=" border border-0 d-flex justify-content-center flex-column my-5">
+                        <h2 class="text-center my-1">Apply for Loan</h2>
+                        <h4 class="text-center">Which Loan would you like to apply for?</h4>
+                         <form class="d-flex justify-content-center">
+                            <div class="radio-group p-0" v-for="loan of loans">
+                                <input type="radio" v-model="selectLoanId" :value="loan.id" :id="loan.id" name="selector">
+                                <label :for="loan.id" class="form1">{{loan.name}} </label>
+                            </div>
+                        </form>
+                        
+                        <h5 class="text-center">Select Payment</h5>
+                        <form class="d-flex justify-content-center pb-3">
+                            <select class="form-select d-flex justify-content-center  transferInputs"  v-model="selectPayment" v-for="loan of loanSelected"   style="width: 15rem;" aria-label="Default select example">  
+                              <option class="pb-3" selected disabled >{{selectPaymentDefault}}</option>
+                              <option  v-for="payment of loan.payments" :value="payment">{{payment}} dues</option>
+                            </select>
+                            
+                        </form>
+                        <div>
+                            <p class="text-center" v-for="loan of loanSelected">
+                                <span class="fw-bold">interest percentage of the loan:</span> {{loan.percentageInterest}}%
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-center" v-for="loan of loanSelected">
+                                <span class="fw-bold">Max Amount:</span> {{precioFormat(loan.maxAmount) }}
+                            </p>
+                        </div>
+                        
+                        <div class="d-flex justify-content-center pb-3">
+                            <div class="transferInputs">
+                                <label for="amount" class="form-label d-flex justify-content-center">Amount:</label>
+                                <input type="amount" class="form-control " style="width: 15rem;" placeholder="ex. 10000" v-model="amount" id="amount">
+                            </div>
+                            <div>
+                                
+                            </div>
+                        </div>
+                        <p class="text-center" >
+                            <span class="fw-bold">Total to pay:</span>  {{precioFormat(totalAmount)}} 
+                        </p>
+                        <div>
+                            <h5 class="text-center">Select Account:</h5>
+                            <form  class="d-flex justify-content-center ">
+                                <div class="radio-group p-0"  v-for="account of accountsActive">
+                                    <input type="radio" v-model="selectAccount" :value="account.number" :id="account.number" name="selector">
+                                    <label :for="account.number" class="form1">{{account.number}} </label>
+                               </div>
+                               
+                            </form>
+                            
+                        </div>
+                        
+                            <div v-if="selectAccount != null" class="d-flex justify-content-center p-3">
+                                <button class="btn btn-primary"  v-on:click="surePopUp()" >Apply</button>
+                            </div>
+                    </div>
+                </div>
+               
+            </div>
+
+            
+                
+        </main>
+        <footer>
+
+            <div class="footer-redes">
+              <h3> Contact</h3>
+  
+              <div class="footer-redes-div">
+                <a href="https://github.com/SebaasTiAn04" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg></a>
+    
+                <a href="https://www.linkedin.com/in/sebastian-alfonso-901240218/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                </svg></a>
+    
+                <a href="https://www.instagram.com/seba_alfonso04/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                </svg></a>
+                
+    
+                <a href="https://www.facebook.com/sebade.sntmairia/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg></a> 
+              </div>
+            </div>
+           
+            <div class="footer-anchor">
+              <nav>
+                <p>Email:  <a href="mailto:BAB@gmail.com.ar">  BAB@gmail.com.ar</a></p> 
+                <p>Tel:  <a href="tel:+0800-222-0400">  0800-222-0400</a></p>
+  
+              </nav>
+  
+              <h3>
+                Cohort 37/38
+              </h3>
+              <p style="color: rgb(118, 192, 253);">&copy;BuenosAiresBank.com</p>
+            </div>
+  
+            <div class="col-8">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26274.994666181836!2d-58.379286071513555!3d-34.594694661537474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccbb4eec746b5%3A0x47f15b046f844d41!2sBanco%20Ciudad%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1674451324560!5m2!1ses-419!2sar"
+               width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" 
+               referrerpolicy="no-referrer-when-downgrade"></iframe>
+               
+            </div>
+          </footer>
+          
+    </div>
+          <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+          <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+          <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script src="./loan-application.js"></script> 
+          <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+          <script>
+            AOS.init();
+          </script>
+</body>
+</html>
